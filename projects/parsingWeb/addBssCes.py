@@ -37,8 +37,6 @@ def hiddenData(ipN, ipE, userC, passwdC, userD, passwdD, db1, db2, db3):
             db2 = data[7]
             db3 = data[8]
             hiddenFile.close()
-    with open("outPyScript.log", "a") as outfile:
-        outfile.write("+ Added information from the config file.\n")
     return ipN, ipE, userC, passwdC, userD, passwdD, db1, db2, db3
 def checkTable(check):
     return check.empty
@@ -112,6 +110,8 @@ def parsingRdb(rdbData):
                     continue
             browser.quit()
             readyList.append(name)
+    print(dataList)
+    print(readyList)
     remainder = (len(dataList)//len(readyList))
     for numeration in range(len(readyList)):
         dataNewSites[readyList[numeration]] = [dataList[y] for y in range(remainder*numeration,remainder*numeration+remainder)]
@@ -195,16 +195,16 @@ def importCes(files):
             print(file)
             print("... Ready to import data 2G Nokia/Bulat from "+file+" file to CES website")
             with open("outPyScript.log", "a") as outfile:
-                outfile.write("... Ready to import data 2G Nokia/Bulat from "+file+" file to CES website\n")    
-            op = webdriver.ChromeOptions()
-            
+                outfile.write("... Ready to import data 2G Nokia/Bulat from "+file+" file to CES website\n")
+
+            op = webdriver.ChromeOptions()            
             op.binary_location =  r'C:\\Program Files\Yandex\YandexBrowser\Application\browser.exe'
             op.add_argument('headless')
             service = Service(executable_path=r'C:\\Users\david.gabunia\parserWeb\yandexdriver.exe')
             #browser = webdriver.Chrome()
             browser = webdriver.Chrome(service=service)            
-            
-            browser.get('http://'+ipNokia+'/CreateSite_web/login.php')            
+            browser.get('http://'+ipNokia+'/CreateSite_web/login.php')
+
             browser.maximize_window()
             soup = BeautifulSoup(browser.page_source, "html.parser")
             findUsername = browser.find_element(By.ID, "username")
@@ -554,15 +554,15 @@ def unloadCes2gNok(cesData):
             password=passwdDb,
         )
     except mysql.connector.errors.ProgrammingError:
-        with open("outPyScript.log", "a") as outfile:
-            outfile.write("- Error connecting to MYSQL Platform:\n")
+        print("- Error connecting to MYSQL Platform:\n")
     mycursor = mydb.cursor()
     querrydbs = ("SHOW DATABASES")        
     mycursor.execute(querrydbs)
     for querrydbs in mycursor:
         listdbs.append(querrydbs[0])
     for db in listdbs:
-        if dbCes == db and dbCes in listdbs and dbCoords in listdbs:
+        #if dbCes == db and dbCes in listdbs and dbCoords in listdbs:
+        if dbCes == db and dbCes in listdbs:
             try:
                 querry = "SELECT Reg, BS_name, BS_number, CELL FROM CreateSite.table_nokia_2g_v WHERE BSS IS NULL AND Reg IN ('IR','SA','MD','KM','HB','BI','AiN','YA')"
                 mycursor.execute(querry)
@@ -579,8 +579,6 @@ def unloadCes2gNok(cesData):
     cesData = cesData.drop_duplicates()
     mycursor.close()
     mydb.close()
-    with open("outPyScript.log", "a") as outfile:
-        outfile.write("+ Added information from the Site CES 2G Nokia.\n")
     return cesData
 def unloadCes3gNok(cesData):
     listdbs = []
@@ -1164,6 +1162,7 @@ with open("outPyScript.log", "w") as outfile:
 ipNokia, ipEricsson, userCes, passwdCes, userDb, passwdDb, dbCes, dbConfig, dbCoords = hiddenData(ipNokia, ipEricsson, userCes, passwdCes, userDb, passwdDb, dbCes, dbConfig, dbCoords)
 #3 Выгрузка информации по CES из Базы данных CES:
 ces2gNokTable = unloadCes2gNok(ces2gNokTable)
+print(ces2gNokTable)
 ces3gNokTable = unloadCes3gNok(ces3gNokTable)
 ces4gNokTable = unloadCes4gNok(ces4gNokTable)
 ces2gErTable = unloadCes2gEr(ces2gErTable)
@@ -1187,10 +1186,14 @@ if checkTable(ces2gNokTable) == False:
         outfile.write("... Empty table (ces2gNokTable) 2G Nokia.\n")
     #5
     oldBsTable, ces2gNokTable = joinOldBs2g(oldBsTable, ces2gNokTable)
+    print("+ Added information (oldBsTable) about Old BS 2G Nokia.")
+    print(oldBsTable)
     with open("outPyScript.log", "a") as outfile:
         outfile.write("+ Added information (oldBsTable) about Old BS 2G Nokia.\n")
     #6
     nameNewBsTable, ces2gNokTable = findNewSites(nameNewBsTable, ces2gNokTable)
+    print("+ Added information (nameNewBsTable) about name New BS 2G Nokia.")
+    print(nameNewBsTable)
     with open("outPyScript.log", "a") as outfile:
         outfile.write("+ Added information (nameNewBsTable) about name New BS 2G Nokia.\n")
     #7
@@ -2112,4 +2115,4 @@ if checkTable(ces2gNokTable) == True and checkTable(ces3gNokTable) == True and c
 #print(readyList)
 readyList = addResultFile(readyList)
 #16
-listFiles = importCes(listFiles)
+#listFiles = importCes(listFiles)
