@@ -1,0 +1,3 @@
+REGKEY = HKLM\SOFTWARE\WOW6432Node\Yandex\YandexBrowser
+REGVAL1 = ypv
+REGVAL2 = InstallerSuccessLaunchCmdLine

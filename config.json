@@ -1,0 +1,76 @@
+{
+    "PROXY" : "",
+	
+    "IPDB1" : "",
+    "USERDB1" : "",
+    "PASSWDB1" : "",
+    "FILTER1" : "",
+    "DB1" : "",
+    "TABLE1" : "",
+    "CONDITION1" : "",
+
+    "IPDB2" : "",
+    "USERDB2" : "",
+    "PASSWDB2" : "",
+    "FILTER10" : "",
+    "DB4" : "",
+    "TABLE10" : "",
+    "CONDITION5" : "",
+
+    "FILTER2" : "",
+    "DB2" : "",
+    "TABLE2" : "",
+    "CONDITION2" : "",
+    
+    "LINKPO1" : "C:\\Users\\USER\\parserWeb\\yandexdriver.exe",
+    "LINKPO2" : "C:\\Program Files\\Yandex\\YandexBrowser\\Application\\browser.exe",
+    "LINKSITE1" : "https://",
+    "TEGSSITE1" : "p$body$ListSearch$listSearchBox, td.fieldType-eString a.Link, td.Value.FormTd",
+
+    "FILTER3" : "",
+    "DB3" : "",
+    "TABLE3" : "",
+    "CONDITION3" : "",
+
+    "LINKSITE2" : "http://",
+    "TEGSSITE2" : "username, password, .btn-primary, a[href='BSS_nokia_table.php'], a[href='tables_nokia_2g/table_nokia_bss_2g/index.php'], a[href='/CreateSite_web/import_nokia_2g/index_bss.php'], //input[@type='file'], jumbotron",
+    "TEGSSITE3" : "username, password, .btn-primary, a[href='BSS_nokia_table.php'], a[href='tables_nokia_4g/table_nokia_bss_4g/index.php'], a[href='/CreateSite_web/import_nokia_4g/index_bss.php'], //input[@type='file'], jumbotron",
+    "USERSITE2" : "",
+    "PASSWDSITE2" : "",
+
+    "LINKSITE3" : "http://",
+    "TEGSSITE4" : "username, password, .btn-primary, a[href='BSS_table.php'], a[href='tables_ericsson_4g/table_ericsson_bss_4g/index.php'], a[href='/CreateSite_web/import_ericsson_4g/index_bss.php'], //input[@type='file'], jumbotron",
+    "TEGSSITE5" : "username, password, .btn-primary, a[href='BSS_table.php'], a[href='tables_ericsson_3g/table_ericsson_bss_3g/index.php'], a[href='/CreateSite_web/import_ericsson_3g/index_bss.php'], //input[@type='file'], jumbotron",
+    "TEGSSITE6" : "username, password, .btn-primary, a[href='BSS_table.php'], a[href='tables_ericsson_2g/table_ericsson_bss_2g/index.php'], a[href='/CreateSite_web/import_ericsson_2g/index_bss.php'], //input[@type='file'], jumbotron",
+
+
+    "FILTER4" : "",
+    "TABLE4" : "",
+    "FILTER5" : "",
+    "TABLE5" : "",
+    "FILTER9" : "",
+    "TABLE9" : "",
+    "FILTER8" : "",
+    "TABLE8" : "",
+    "FILTER11" : "",
+    "TABLE11" : "",
+    "FILTER12" : "",
+    "TABLE12" : "",
+    "FILTER13" : "",
+    "TABLE13" : "",
+    "FILTER14" : "",
+    "TABLE14" : "",
+    "FILTER15" : "",
+    "TABLE15" : "",
+    "FILTER16" : "",
+    "TABLE16" : "",
+
+
+    "FILTER6" : "",
+    "TABLE6" : "",
+    "CONDITION4" : "",
+
+    "FILTER7" : "C",
+    "TABLE7" : ""
+
+}

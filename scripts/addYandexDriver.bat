@@ -1,6 +1,7 @@
 @echo off
 
-SET PROJECT_NAME=parserWeb
+set /p name="Enter the project name: "
+SET PROJECT_NAME=%name%
 REM Установка пути к директории с Яндекс.Драйвером
 ::SET DRIVER_PATH=C:\path\to\yandexdriver\
 

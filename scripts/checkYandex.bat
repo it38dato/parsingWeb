@@ -1,7 +1,16 @@
 @echo off
-SET RegKey="HKLM\SOFTWARE\WOW6432Node\Yandex\YandexBrowser"
-SET RegValue1=ypv
-SET RegValue2=InstallerSuccessLaunchCmdLine
+:: Загрузка переменных из config.txt
+if exist config.txt (
+    for /f "tokens=1,2 delims== " %%A in (config.txt) do (
+        if "%%A"=="REGKEY" set "RegKey=%%B"
+        if "%%A"=="REGVAL1" set "RegValue1=%%B"
+        if "%%A"=="REGVAL2" set "RegValue2=%%B"
+    )
+) else (
+    echo Config file not found!
+    pause
+    exit /b
+)
 
 echo Checking %RegValue2%...
 REG QUERY %RegKey% /v %RegValue2% > nul 2>&1
