@@ -20,7 +20,9 @@ def funcParsingRdb(browser, filterObjectSite):
     #print(filterObjectSite)
 
     listTegs, symbol, tegs = funcImportStrToList([], ", ", CONFIG_DATA.get("TEGSSITE1"))
-    #print(listTegs)
+    print("TEST!")
+    print(listTegs)
+    print("TEST!")
 
     browser, tegSearch, tegCandidate, filterObjectSite = funcFindAndClickObjectSite(browser, listTegs[0], listTegs[1], filterObjectSite)
 
