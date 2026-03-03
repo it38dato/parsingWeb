@@ -10,6 +10,7 @@ def funcImportSqlToPandas(df, ipDb, userDb, passwdDb, nameDb, nameTable, conditi
             host=ipDb,
             user=userDb,
             password=passwdDb,
+            use_pure=True, # вместо C используем Python
         )
     except mysql.connector.errors.ProgrammingError:
         print("- Error connecting to MYSQL Platform")

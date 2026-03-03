@@ -510,6 +510,7 @@ def unloadCoords(coordsData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -552,6 +553,7 @@ def unloadCes2gNok(cesData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         print("- Error connecting to MYSQL Platform:\n")
@@ -588,6 +590,7 @@ def unloadCes3gNok(cesData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -626,6 +629,7 @@ def unloadCes4gNok(cesData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -664,6 +668,7 @@ def unloadCes2gEr(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -702,6 +707,7 @@ def unloadCes3gEr(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -741,6 +747,7 @@ def unloadCes4gEr(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -779,6 +786,7 @@ def unloadCes2gNokBul(cesData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -817,6 +825,7 @@ def unloadCes4gNokBul(cesData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -855,6 +864,7 @@ def unloadCes2gErBul(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -893,6 +903,7 @@ def unloadCes4gErBul(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -931,6 +942,7 @@ def unloadCes2gErBulNeop(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -969,6 +981,7 @@ def unloadCes4gErBulNeop(cesData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -1007,6 +1020,7 @@ def unloadDaily2g(oldData):
             host=ipNokia,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -1045,6 +1059,7 @@ def unloadDaily3g(oldData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
@@ -1083,6 +1098,7 @@ def unloadDaily4g(oldData):
             host=ipEricsson,
             user=userDb,
             password=passwdDb,
+            use_pure=True,
         )
     except mysql.connector.errors.ProgrammingError:
         with open("outPyScript.log", "a") as outfile:
